@@ -1192,6 +1192,9 @@ THE SOFTWARE.
                         '</li>' +
                    '</ul>';
                 }
+                if (picker.options.extraHtml) {
+                    ret += picker.options.extraHtml;
+                }
                 ret += '</div>';
                 return ret;
             }
@@ -1199,12 +1202,14 @@ THE SOFTWARE.
                 return (
                     '<div class="bootstrap-datetimepicker-widget dropdown-menu">' +
                         '<div class="timepicker">' + tpGlobal.getTemplate() + '</div>' +
+                        (picker.options.extraHtml ? picker.options.extraHtml : '') +
                     '</div>'
                 );
             }
             return (
                 '<div class="bootstrap-datetimepicker-widget dropdown-menu">' +
                     '<div class="datepicker">' + template + '</div>' +
+                    (picker.options.extraHtml ? picker.options.extraHtml : '') +
                 '</div>'
             );
         },
@@ -1494,6 +1499,7 @@ THE SOFTWARE.
         sideBySide: false,
         daysOfWeekDisabled: [],
         widgetParent: false,
+        extraHtml: false,
 
         keyBinds: {
             up: function () {
