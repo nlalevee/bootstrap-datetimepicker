@@ -364,8 +364,14 @@ THE SOFTWARE.
 
             if (isInFixed()) {
                 position = 'fixed';
-                offset.top -= $window.scrollTop();
-                offset.left -= $window.scrollLeft();
+                if (placePosition === 'top') {
+                    offset.bottom += $window.scrollTop();
+                } else {
+                    offset.top -= $window.scrollTop();
+                }
+                if (picker.options.orientation === 'left') {
+                    offset.left -= $window.scrollLeft();
+                }
             }
 
             if ($window.width() < offset.left + picker.widget.outerWidth()) {
