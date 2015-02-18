@@ -619,7 +619,7 @@ THE SOFTWARE.
         fillMinutes = function () {
             var table = picker.widget.find('.timepicker .timepicker-minutes table'), html = '', current = 0, i, j, step = picker.options.minuteStepping;
             table.parent().hide();
-            if (step === 1)  {
+            if (step === 1) {
                 step = 5;
             }
             for (i = 0; i < Math.ceil(60 / step / 4) ; i++) {
