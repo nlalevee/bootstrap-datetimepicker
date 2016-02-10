@@ -329,6 +329,7 @@ THE SOFTWARE.
             var position = 'absolute',
                 offset = picker.component ? picker.component.offset() : picker.element.offset(),
                 $window = $(window),
+                $body = $("body"),
                 placePosition;
 
             picker.width = picker.component ? picker.component.outerWidth() : picker.element.outerWidth();
@@ -346,7 +347,7 @@ THE SOFTWARE.
                 }
             }
             if (placePosition === 'top') {
-                offset.bottom = $window.height() - offset.top + picker.element.outerHeight() + 3;
+                offset.bottom = $body.height() - offset.top + picker.element.outerHeight() + 3;
                 picker.widget.addClass('top').removeClass('bottom');
             } else {
                 offset.top += 1;
